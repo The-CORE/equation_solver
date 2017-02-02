@@ -35,7 +35,11 @@ class TestEquation(unittest.TestCase):
         value = equation_solver.evaluate('   x=14*3')
         self.assertEqual(value, 42)
 
-    def test_rearrangement(self):
+    def test_term_rearangement(self):
+        value = equation_solver.evaluate('x - 5 = 3')
+        self.assertEqual(value, 8)
+
+    def test_fraction_rearrangement(self):
         value = equation_solver.evaluate('2=84/   x')
         self.assertEqual(value, 42)
 
