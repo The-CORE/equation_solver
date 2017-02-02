@@ -1,0 +1,5 @@
+- Text representations of the nodes.
+- Actually solving equations.
+- Checking equality of sides.
+- Tests of strange cases.
+- Raising to powers.
