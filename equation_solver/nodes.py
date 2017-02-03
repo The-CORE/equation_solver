@@ -6,7 +6,7 @@ class EquationNode:
         self.lhs = lhs
         self.rhs = rhs
 
-    def _lhs_allows_evaluation(self):
+    def lhs_allows_evaluation(self):
         '''
         The equation can only be validated if the left hand side contains only
         an unknown. This functions checks if that is the case.
@@ -23,13 +23,17 @@ class EquationNode:
         return True
 
     def evaluate(self):
-        if not self._lhs_allows_evaluation():
+        if not self.lhs_allows_evaluation():
             print(self.lhs.terms)
             raise EquationError('lhs must be a single unknown to be evaluted')
         return self.rhs.evaluate()
 
     def __str__(self):
-        return str(self.lhs) + ' = ' + str(self.rhs)
+        '''
+        The string of the equation is the string of the right and left hand side
+        expressions, but, without the enclosing brackets.
+        '''
+        return str(self.lhs)[1:-1] + ' = ' + str(self.rhs)[1:-1]
 
 class ExpressionNode:
     def __init__(self, terms):

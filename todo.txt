@@ -1,5 +1,7 @@
-- Text representations of the nodes.
 - Actually solving equations.
 - Checking equality of sides.
 - Tests of strange cases.
 - Raising to powers.
+- Squash coefficients into terms.
+  i.e. 5 * (4 * (6 + x)) => 20 * (6 + x)
+- Ensure no infinite loops if I put it online.
